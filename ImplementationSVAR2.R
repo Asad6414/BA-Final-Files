@@ -26,11 +26,11 @@ data<-read_csv("C:/Users/akhud/OneDrive/Рабочий стол/Finish it/Data/d
 
 gdp <- ts(diff(log(data$GDP)), start= c(2019, 1), freq = 4) # Correct way to construct the data
 cpi <- ts(diff(log(data$CPI)), start= c(2019, 1), freq = 4)
-prate <- ts(diff(log(data$FEDFUNDS)), start= c(2019, 1), freq = 4) # Not necessesary to take to take log and diff
+prate <- ts(data$FEDFUNDS, start= c(2019, 1), freq = 4) # Not necessesary to take to take log and diff
 empration <- ts(data$EMRATIO, start= c(2019, 1), freq = 4) # Not necessesary to take to take log and diff
 wti_oil <- ts(diff(log(data$WTI_OIL)), start= c(2019, 1), freq = 4)
 divisia <- ts(diff(log(data$DIVISIA_M3)), start= c(2019, 1), freq = 4)
-gscpi <- ts(diff(log(data$GSCPI)), start= c(2019, 1), freq = 4) # Not necessesary to take to take log and diff
+gscpi <- ts(diff(log(data$GSCPI)), start= c(2019, 1), freq = 4)
 gov_total <- ts(diff(log(data$GOV_SPEND)), start= c(2019, 1), freq = 4)
 total_market <- ts(diff(log(data$GOV_DEBT)), start= c(2019, 1), freq = 4)
 
@@ -41,7 +41,6 @@ wti_oil <- ts(c(wti_oil, 0.01882705), start = c(2019, 1), frequency = 4)
 divisia <- ts(c(divisia, 0.01204757), start = c(2019, 1), frequency = 4)
 gov_total <- ts(c(gov_total, 0.01691471), start = c(2019, 1), frequency = 4)
 total_market <- ts(c(total_market, 0.02069587), start = c(2019, 1), frequency = 4)
-prate <- ts(c(prate, 0.04199382), start = c(2019, 1), frequency = 4)
 gscpi <- ts(c(gscpi, 0.05534446), start = c(2019, 1), frequency = 4)
 
 #Plot the data
